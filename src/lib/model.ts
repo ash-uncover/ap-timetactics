@@ -16,10 +16,12 @@ export interface StatLayer extends Stats{
 }
 
 export class Hero implements Stats {
-  
+
   // #region Attributes
   #name: string
   #cost: number
+  #race: string
+  #classe: string
 
   #hps = 1
   #phy = 0
@@ -34,6 +36,8 @@ export class Hero implements Stats {
   constructor(race: Race, classe: Classe, name: string, cost: number) {
     this.#name = name
     this.#cost = cost
+    this.#race = race.name
+    this.#classe = classe.name
 
     const stats: Stats[] = [race, classe]
     stats.forEach((stat) => {
@@ -51,6 +55,8 @@ export class Hero implements Stats {
   // #region Getters
   get name () { return this.#name }
   get cost () { return this.#cost }
+  get race () { return this.#race }
+  get classe () { return this.#classe }
 
   get hps () { return this.#hps }
   get phy () { return this.#phy }
