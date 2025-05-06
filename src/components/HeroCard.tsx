@@ -1,5 +1,6 @@
 import React from 'react'
 import { Hero } from '../lib/model'
+import { CardIcon } from './CardIcon'
 
 import './HeroCard.css'
 
@@ -18,19 +19,64 @@ export const HeroCard = ({
 
   // #region Rendering
   const classes = ['ap-hero-card']
-
+  classes.push(`ap-hero-card--${hero.race.name}`)
   return (
     <div className={classes.join(' ')}>
-      <div>
-        {hero.classe} {hero.race} ({hero.cost})
+      <div className='ap-hero-card--name'>
+        {hero.classe.name} {hero.race.name}
       </div>
-      <div>VIE: {hero.vie}</div>
-      <div>PHY: {hero.phy}</div>
-      <div>MAG: {hero.mag}</div>
-      <div>ARM: {hero.arm}</div>
-      <div>RES: {hero.res}</div>
-      <div>FOR: {hero.str}</div>
-      <div>INT: {hero.int}</div>
+
+      <div className='ap-hero-card--price'>
+        <CardIcon
+          className='ap-hero-card--cost'
+          icon={['fas', 'coins']}
+          value={hero.cost}
+        />
+      </div>
+
+      <div className='ap-hero-card--attack'>
+        <CardIcon
+          className=''
+          icon={['fas', 'hand-fist']}
+          value={hero.phy}
+        />
+        <CardIcon
+          className=''
+          icon={['fas', 'wand-sparkles']}
+          value={hero.mag}
+        />
+      </div>
+
+      <div className='ap-hero-card--stats'>
+        <CardIcon
+          className=''
+          icon={['fas', 'dumbbell']}
+          value={hero.str}
+        />
+        <CardIcon
+          className=''
+          icon={['fas', 'hat-wizard']}
+          value={hero.int}
+        />
+      </div>
+
+      <div className='ap-hero-card--defense'>
+        <CardIcon
+          className=''
+          icon={['fas', 'shield']}
+          value={hero.arm}
+        />
+        <CardIcon
+          className=''
+          icon={['fas', 'shield-halved']}
+          value={hero.res}
+        />
+        <CardIcon
+          className=''
+          icon={['fas', 'heart']}
+          value={hero.hps}
+        />
+      </div>
     </div>
   )
   // #endregion

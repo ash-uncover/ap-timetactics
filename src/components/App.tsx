@@ -4,6 +4,8 @@ import { CLASSES } from '../lib/classes'
 import { HeroCard } from './HeroCard'
 import { Hero } from '../lib/model'
 
+import './App.css'
+
 export const App = () => {
 
   // #region Hooks
@@ -39,7 +41,7 @@ export const App = () => {
                 {Object.values(RACES).map(race => {
                   return (
                     <td key={`${classe.name}-${race.name}`}>
-                      <HeroCard hero={new Hero(race, classe, 'toto', 1)} />
+                      <HeroCard hero={new Hero(race, classe, 'toto', 3)} />
                     </td>
                   )
                 })}

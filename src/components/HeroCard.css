@@ -1,5 +1,65 @@
 .ap-hero-card {
-    margin: 0.5rem;
-    border: 1px solid grey;
+  margin: 0.5rem;
+  border: 0.25rem solid black;
+  border-radius: 0.5rem;
+  padding: 0.25rem;
+  aspect-ratio: 3/4;
+  height: 200px;
+
+  position: relative;
+
+  &.ap-hero-card--human {
+    background: mediumaquamarine;
+  }
+
+  &.ap-hero-card--elf {
+    background: darkkhaki;
+  }
+
+  &.ap-hero-card--orc {
+    background: olivedrab;
+  }
+
+  &.ap-hero-card--dwarf {
+    background: burlywood;
+  }
+
+  &.ap-hero-card--troll {
+    background: slategray;
+  }
+
+  &.ap-hero-card--gobelin {
+    background: darkolivegreen;
+  }
+
+  & .ap-hero-card--price {
+    position: absolute;
+    top: 0.25rem;
+    right: 0.25rem;
+    background: SlateGray;
+    border: 2px solid gold;
+    border-radius: 50%;
+    height: 1.25rem;
+    width: 1.25rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    & .ap-card-icon {
+      --ap-card-icon--size: 0.9rem;
+      --ap-card-icon--icon-color: LightGoldenrodYellow;
+      --ap-card-icon--text-color: black;
+    }
+  }
+
+  & .ap-hero-card--defense {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    gap: 0.25rem;
     padding: 0.25rem;
+  }
+
 }

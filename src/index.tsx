@@ -17,6 +17,8 @@ import {
 import { App } from './components/App'
 import { CONFIG } from './config'
 
+import './lib/icons'
+
 let Router = BrowserRouter
 if (CONFIG.AP_TIMETACTICS_ENVIRONMENT === 'github') {
   Router = HashRouter

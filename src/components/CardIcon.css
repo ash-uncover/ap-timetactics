@@ -1,0 +1,29 @@
+.ap-card-icon {
+  --ap-card-icon--size: 1.5rem;
+  --ap-card-icon--icon-color: #CCC;
+  --ap-card-icon--text-color: #222;
+
+  position: relative;
+  height: var(--ap-card-icon--size);
+  width: var(--ap-card-icon--size);
+
+  & .ap-card-icon_layer {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    & .ap-card-icon_icon {
+      font-size: var(--ap-card-icon--size);
+      color: var(--ap-card-icon--icon-color);
+    }
+    & .ap-card-icon_text {
+      color: var(--ap-card-icon--text-color);
+      font-size: calc(var(--ap-card-icon--size) / 2 + 0.4rem);
+      font-weight: bold;
+    }
+  }
+}
